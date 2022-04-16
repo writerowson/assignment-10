@@ -1,20 +1,27 @@
 import React from 'react';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import CustomLink from '../Shared/CustomLink';
 
 const Header = () => {
     return (
-        <div className='container mt-3 '>
-            <div className='d-flex'>
-                <h4 style={{ color: "#006400" }}>HAPPENING HAPPINESS</h4>
-                <div className='d-flex '>
-                    <CustomLink to='/'>Home</CustomLink>
-                    <CustomLink to='/home'>Services</CustomLink>
-                    <CustomLink to='/blog'>Blog</CustomLink>
-                    <CustomLink to='/about'>About</CustomLink>
-                    <CustomLink to='/login'>Login</CustomLink>
-                </div>
-            </div>
-        </div>
+        <Navbar sticky='top' collapseOnSelect expand="lg" variant="light">
+            <Container>
+                <Navbar.Brand style={{ color: "#006400" }} className='fw-bold' href="#home">HAPPENING HAPPINESS</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto ">
+                        <CustomLink className='me-2' to='/'>Home</CustomLink>
+                        <CustomLink className='me-2' to='/home'>Services</CustomLink>
+                    </Nav>
+                    <Nav >
+                        <CustomLink className='me-2' to='/blog'>Blog</CustomLink>
+                        <CustomLink className='me-2' to='/about'>About</CustomLink>
+                        <CustomLink className='me-2' to='/login'>Login</CustomLink>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+
     );
 };
 
