@@ -7,7 +7,7 @@ function CustomLink({ children, to, ...props }) {
     return (
         <div className='fw-bold'>
             <Link
-                style={{ color: match ? 'RGB(220,77,1)' : 'black', textDecoration: match ? "underline" : "none" }}
+                style={{ color: match ? 'RGB(220,77,1)' : '#006400', textDecoration: match ? "underline" : "none" }}
                 to={to}
                 {...props}
             >
