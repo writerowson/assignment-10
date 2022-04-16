@@ -4,7 +4,7 @@ import CustomLink from '../Shared/CustomLink';
 
 const Header = () => {
     return (
-        <Navbar sticky='top' collapseOnSelect expand="lg" variant="light">
+        <Navbar sticky='top' collapseOnSelect expand="lg" bg='light' variant="light">
             <Container>
                 <Navbar.Brand style={{ color: "#006400" }} className='fw-bold' href="#home">HAPPENING HAPPINESS</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
