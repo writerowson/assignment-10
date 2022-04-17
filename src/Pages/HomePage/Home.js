@@ -1,16 +1,18 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import slide1 from '../../images/slide/img01.png'
-import slide2 from '../../images/slide/img03.png'
-import slide3 from '../../images/slide/img04.png'
+import slide2 from '../../images/slide/img02.png'
+import slide3 from '../../images/slide/img03.png'
+import UseServices from '../../Shared/UseServices';
+import Service from '../Services/Service/Service';
 
 const Home = () => {
+    const [services, setServices] = UseServices()
     return (
         <div>
             <Carousel >
                 <Carousel.Item interval={1000}>
                     <img
-                        style={{ height: '500px' }}
                         className="d-block w-100 text-success "
                         src={slide1}
                         alt="First slide"
@@ -33,7 +35,6 @@ const Home = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        style={{ height: '500px' }}
                         className="d-block w-100"
                         src={slide3}
                         alt="Third slide"
@@ -45,7 +46,15 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
 
+            <div className='row'>
+                {
+                    services.slice(0, 3).map(service => <Service
+                        key={service._id}
+                        service={service}>
+                    </Service>)
+                }
 
+            </div>
         </div>
     );
 };
