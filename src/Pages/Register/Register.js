@@ -21,8 +21,8 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     if (error) {
         return (
-            <div>
-                <p style={{ color: 'RGB(220,77,1)' }}>Error: {error.message}</p>
+            <div className='container text-center fs-3 mt-5'>
+                <p style={{ color: 'RGB(220,77,1)', marginBottom: '400px' }}>Error: {error.message}</p>
             </div>
         );
     }
@@ -53,11 +53,11 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="text" name="email" placeholder="Enter email" />
+                    <Form.Control type="text" name="email" placeholder="Enter email" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="I accept all terms and conditions" />
