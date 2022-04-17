@@ -48,8 +48,8 @@ const Home = () => {
 
             <div className="container">
 
-                <div className=' row text-center mt-5'>
-                    <h2 style={{ color: "#006400" }}> Most Popular Services</h2>
+                <div style={{ color: "#006400" }} className=' row text-center mt-5'>
+                    <h2 > Most Popular Services</h2>
                     {
                         services.slice(0, 3).map(service => <Service
                             key={service._id}

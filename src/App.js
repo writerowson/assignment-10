@@ -10,6 +10,7 @@ import Login from './Pages/LogIn/Login';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import NotFounded from './NotFound/NotFounded';
+import Register from './Pages/Register/Register';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFounded></NotFounded>}></Route>
       </Routes>
       <Footer></Footer>
@@ -29,3 +31,5 @@ function App() {
 }
 
 export default App;
+
+

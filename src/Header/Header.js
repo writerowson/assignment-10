@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import CustomLink from '../Shared/CustomLink';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <Navbar sticky='top' collapseOnSelect expand="lg" bg='light' variant="light">
             <Container>
-                <Navbar.Brand style={{ color: "#006400" }} className='fw-bold' >HAPPENING HAPPINESS</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" style={{ color: "#006400" }} className='fw-bold' >HAPPENING HAPPINESS</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto ">
