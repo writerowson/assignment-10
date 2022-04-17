@@ -2,9 +2,17 @@ import React from 'react';
 import img from '../../images/my.jpg'
 const About = () => {
     return (
-        <div className=' container d-flex'>
-            <h1>hi</h1>
-            <img style={{ height: '100px' }} src={img} alt="" />
+        <div className=' container mt-5 '>
+            <div className=' row  '>
+                <div className=' col-lg-9 col-12'>
+                    <h2 style={{ color: "#006400" }}>This is Rowshon Ara</h2>
+                    <p style={{ color: "#006400" }}>My future plan is to become an entrepreneur. It's a long run and big budgeted project. However,  my recent objective is to beacome a junior front developer.  </p>
+                    <p style={{ color: "#006400" }}>As a slow learner, I need practice more and more. Sometimes 24/7 hours of a day become short for practicing.  Even  after prcticing I don't get many lessons. So, then I switch to another lesson. Sometime this break helps to mesmarise them and sometime it leads to forget them.   </p>
+                </div>
+                <div className=' col-lg-3  col-12'>
+                    <img className='rounded w-100' src={img} alt="" />
+                </div>
+            </div>
         </div>
     );
 };

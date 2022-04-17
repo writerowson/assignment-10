@@ -30,7 +30,7 @@ const Register = () => {
     //     return <p>Loading...</p>;
     // }
     if (user) {
-        navigate('/home')
+        navigate('/')
     }
     const handleRegister = e => {
         e.preventDefault()
