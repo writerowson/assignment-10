@@ -8,6 +8,8 @@ import Blog from './Pages/Blog/Blog';
 import About from './Pages/About/About';
 import Login from './Pages/LogIn/Login';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
+import NotFounded from './NotFound/NotFounded';
 
 function App() {
   return (
@@ -19,9 +21,9 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-
-
+        <Route path='*' element={<NotFounded></NotFounded>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
