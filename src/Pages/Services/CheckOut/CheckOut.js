@@ -2,10 +2,10 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const CheckOut = () => {
-    const { checkout } = useParams()
+    // const { checkout } = useParams()
     return (
         <div>
-            <h3>THis is checkout : {checkout}</h3>
+            <h3>THis is checkout : </h3>
         </div>
     );
 };

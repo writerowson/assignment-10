@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Spinnerr from '../LogIn/Spinner/Spinnerr';
 
 const Register = () => {
 
-    const [email, setEmail] = useState(false);
-    const [password, setPassword] = useState('');
+
     const navigate = useNavigate()
 
     const navigateLogin = () => {
@@ -19,18 +19,18 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-    // if (error) {
-    //     return (
-    //         <div>
-    //             <p>Error: {error.message}</p>
-    //         </div>
-    //     );
-    // }
-    // if (loading) {
-    //     return <p>Loading...</p>;
-    // }
+    if (error) {
+        return (
+            <div>
+                <p style={{ color: 'RGB(220,77,1)' }}>Error: {error.message}</p>
+            </div>
+        );
+    }
+    if (loading) {
+        return <Spinnerr></Spinnerr>;
+    }
     if (user) {
-        navigate('/')
+        navigate('/home')
     }
     const handleRegister = e => {
         e.preventDefault()
