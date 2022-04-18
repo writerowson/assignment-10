@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Spinnerr from '../Spinner/Spinnerr';
+import google from '../../../images/google.jpg'
+import github from '../../../images/github.jpg'
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
+    const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -32,7 +34,8 @@ const SocialLogin = () => {
                 <p className='mt-3 px-2'>or</p>
                 <div style={{ height: '1px' }} className='bg-success w-50'></div>
             </div>
-            <button onClick={() => signInWithGoogle()} style={{ border: '2px solid RGB(220,77,1)' }} className='btn btn-light w-100'>Signin with Google</button>
+            <button onClick={() => signInWithGoogle()} style={{ border: '2px solid RGB(220,77,1)' }} className='btn btn-light w-100'><img style={{ width: '25px' }} src={google} alt="" /> Signin with Google</button>
+            <button onClick={() => signInWithGoogle()} style={{ border: '2px solid RGB(220,77,1)' }} className='btn btn-light w-100 mt-1'  > <img style={{ width: '25px' }} src={github} alt="" /> Signin with Github</button>
         </div>
     );
 };
