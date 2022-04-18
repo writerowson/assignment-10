@@ -61,7 +61,6 @@ const Login = () => {
     }
     if (user) {
         navigate('/home');
-
     }
 
 

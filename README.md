@@ -10,5 +10,5 @@ Live site link <b> https://golden-biscotti-443cea.netlify.app/</b>
 * And react javascript framwork.
 * Firebase for  managing all data real-time in the database
 * For simple authentication  I used reuseble hooks of React Firebase Hooks
-* toastify  and alert both to use show email verifiation msg
+* toastify  and alert both to  show email verifiation msg
 

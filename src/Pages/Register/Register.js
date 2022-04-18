@@ -42,11 +42,13 @@ const Register = () => {
     const varifyEmail = () => {
         sendEmailVerification(auth.currentUser)
             .then(() => {
-                alert('Email verification sent');
+                alert('Email sent to verify, Now You can logIn');
             })
     }
     if (user) {
         varifyEmail()
+        navigate('/login')
+
     }
 
     return (
