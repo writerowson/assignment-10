@@ -4,6 +4,9 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Spinnerr from '../LogIn/Spinner/Spinnerr';
+import { sendEmailVerification } from "firebase/auth";
+import { toast, ToastContainer } from 'react-toastify';
+
 
 const Register = () => {
     const navigate = useNavigate()
@@ -13,6 +16,7 @@ const Register = () => {
     const [
         createUserWithEmailAndPassword,
         user,
+        registered,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
@@ -26,9 +30,6 @@ const Register = () => {
     if (loading) {
         return <Spinnerr></Spinnerr>;
     }
-    if (user) {
-        navigate('/home')
-    }
     const handleRegister = e => {
         e.preventDefault()
         // to check value of form from "name" attribute
@@ -38,9 +39,15 @@ const Register = () => {
         const password = e.target.password.value;
         createUserWithEmailAndPassword(email, password)
     }
-
-
-
+    const varifyEmail = () => {
+        sendEmailVerification(auth.currentUser)
+            .then(() => {
+                alert('Email verification sent');
+            })
+    }
+    if (user) {
+        varifyEmail()
+    }
 
     return (
         <div className='container w-50 mx-auto '>
@@ -66,6 +73,7 @@ const Register = () => {
                 </Button>
             </Form>
             <p>Already Registered?<Link to='/login' onClick={navigateLogin} className='text-success  pe-auto text-decoration-none' > Please Login</Link></p>
+            <ToastContainer />
         </div >
     );
 };

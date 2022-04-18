@@ -1,10 +1,12 @@
-
 import React, { useRef } from 'react';
-import { Button, Form, ToastContainer } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Spinnerr from './Spinner/Spinnerr';
+
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
     const emailRef = useRef('')
@@ -20,6 +22,7 @@ const Login = () => {
         user,
         loading,
         error,
+        registered
     ] = useSignInWithEmailAndPassword(auth)
     const [
         sendPasswordResetEmail,
@@ -48,18 +51,20 @@ const Login = () => {
         if (email) {
             sendPasswordResetEmail(auth, email)
                 .then(() => {
-                    alert('Email sent')
+                    toast('Email sent')
                     // console.log('Email sent')
                 })
         }
         else {
-            alert('plz enter your email')
+            toast('plz enter your email')
         }
     }
     if (user) {
         navigate('/home');
 
     }
+
+
 
     return (
         <div className='container w-50 mx-auto'>
