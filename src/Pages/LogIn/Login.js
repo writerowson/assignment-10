@@ -7,6 +7,7 @@ import Spinnerr from './Spinner/Spinnerr';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
+import SocialLogin from './SocialLogin/SocialLogin';
 
 const Login = () => {
     const emailRef = useRef('')
@@ -81,15 +82,15 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" name="password" placeholder="Password" required />
                 </Form.Group>
-                <Button variant="success" type="submit">
+                <Button className='text-center fw-bold w-100' variant="success" type="submit">
                     Log In
                 </Button>
             </Form>
-
+            <p><button onClick={resetPassword} className='text-success btn btn-link pe-auto text-decoration-none' >Forget Password</button></p>
             <p>New to Happining Happiness?<Link to='/register' className='text-success  pe-auto text-decoration-none' onClick={navigateRegister} > Plz Register</Link></p>
-            <p>Already registered?<button onClick={resetPassword} className='text-success btn btn-link pe-auto text-decoration-none' >Forget Password</button></p>
-            <ToastContainer />
 
+            <ToastContainer />
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

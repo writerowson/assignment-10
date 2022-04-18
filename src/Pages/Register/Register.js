@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import Spinnerr from '../LogIn/Spinner/Spinnerr';
 import { sendEmailVerification } from "firebase/auth";
 import { toast, ToastContainer } from 'react-toastify';
+import SocialLogin from '../LogIn/SocialLogin/SocialLogin';
 
 
 const Register = () => {
@@ -70,12 +71,13 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="I accept all terms and conditions" />
                 </Form.Group>
-                <Button variant="success" type="submit">
+                <Button className='w-100 fw-bold' variant="success" type="submit">
                     Register
                 </Button>
             </Form>
             <p>Already Registered?<Link to='/login' onClick={navigateLogin} className='text-success  pe-auto text-decoration-none' > Please Login</Link></p>
             <ToastContainer />
+            <SocialLogin></SocialLogin>
         </div >
     );
 };
