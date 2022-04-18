@@ -1,6 +1,7 @@
+
 import React, { useRef } from 'react';
 import { Button, Form, ToastContainer } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Spinnerr from './Spinner/Spinnerr';
@@ -20,10 +21,13 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth)
-
+    const [
+        sendPasswordResetEmail,
+        sending
+    ] = useSendPasswordResetEmail(auth)
     if (error) {
         return (
-            <div className='container text-center fs-3  mt-5'>
+            <div className='container text-center fs-3 fw-bold mt-5'>
                 <p style={{ color: 'RGB(220,77,1)', marginBottom: '400px' }}>Error: {error.message}</p>
             </div>
         );
@@ -31,18 +35,30 @@ const Login = () => {
     if (loading) {
         return <Spinnerr></Spinnerr>
     }
-    if (user) {
-        navigate('/home');
-    }
 
-    // const resetPassword = e = {
-    //     createUserWithEmailAndPassword(email, password)
-    // }
     const handleLogin = e => {
         e.preventDefault()
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password)
+    }
+
+    const resetPassword = () => {
+        const email = emailRef.current.value
+        if (email) {
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    alert('Email sent')
+                    // console.log('Email sent')
+                })
+        }
+        else {
+            alert('plz enter your email')
+        }
+    }
+    if (user) {
+        navigate('/home');
+
     }
 
     return (
@@ -65,8 +81,9 @@ const Login = () => {
                     Log In
                 </Button>
             </Form>
+
             <p>New to Happining Happiness?<Link to='/register' className='text-success  pe-auto text-decoration-none' onClick={navigateRegister} > Plz Register</Link></p>
-            {/* <p><button className='text-success btn btn-link pe-auto text-decoration-none'> Forget Password</button></p> */}
+            <p>Already registered?<button onClick={resetPassword} className='text-success btn btn-link pe-auto text-decoration-none' >Forget Password</button></p>
             <ToastContainer />
 
         </div>

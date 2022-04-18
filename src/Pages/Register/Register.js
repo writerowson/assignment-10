@@ -6,10 +6,7 @@ import auth from '../../firebase.init';
 import Spinnerr from '../LogIn/Spinner/Spinnerr';
 
 const Register = () => {
-
-
     const navigate = useNavigate()
-
     const navigateLogin = () => {
         navigate("/login")
     }
@@ -21,7 +18,7 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     if (error) {
         return (
-            <div className='container text-center fs-3 mt-5'>
+            <div className='container text-center fs-3 fw-bold mt-5'>
                 <p style={{ color: 'RGB(220,77,1)', marginBottom: '400px' }}>Error: {error.message}</p>
             </div>
         );
@@ -41,6 +38,8 @@ const Register = () => {
         const password = e.target.password.value;
         createUserWithEmailAndPassword(email, password)
     }
+
+
 
 
     return (
