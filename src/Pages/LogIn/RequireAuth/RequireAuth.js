@@ -1,7 +1,8 @@
 import React, { Children } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
-import auth from '../../../../firbaseInit';
+import auth from '../../../firebase.init';
+
 import Spinnerr from '../Spinner/Spinnerr';
 
 const RequireAuth = ({ children }) => {

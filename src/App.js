@@ -12,6 +12,8 @@ import Footer from './Footer/Footer';
 import NotFounded from './NotFound/NotFounded';
 import Register from './Pages/Register/Register';
 import CheckOut from './Pages/Services/CheckOut/CheckOut';
+import RequireAuth from './Pages/LogIn/RequireAuth/RequireAuth';
+
 
 
 function App() {
@@ -22,7 +24,11 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/services' element={<Services></Services>}></Route>
-        <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
+        <Route path='/checkout' element=
+          {<RequireAuth>
+            <CheckOut></CheckOut>
+          </RequireAuth>}>
+        </Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
