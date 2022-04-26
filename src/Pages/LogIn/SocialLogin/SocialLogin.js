@@ -35,7 +35,7 @@ const SocialLogin = () => {
                 <div style={{ height: '1px' }} className='bg-success w-50'></div>
             </div>
             <button onClick={() => signInWithGoogle()} style={{ border: '2px solid RGB(220,77,1)' }} className='btn btn-light w-100'><img style={{ width: '25px' }} src={google} alt="" /> Signin with Google</button>
-            <button onClick={() => signInWithGoogle()} style={{ border: '2px solid RGB(220,77,1)' }} className='btn btn-light w-100 mt-1'  > <img style={{ width: '25px' }} src={github} alt="" /> Signin with Github</button>
+            <button onClick={() => signInWithGithub()} style={{ border: '2px solid RGB(220,77,1)' }} className='btn btn-light w-100 mt-1'  > <img style={{ width: '25px' }} src={github} alt="" /> Signin with Github</button>
         </div>
     );
 };

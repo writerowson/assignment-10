@@ -14,6 +14,7 @@ const Register = () => {
     const navigateLogin = () => {
         navigate("/login")
     }
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -43,13 +44,12 @@ const Register = () => {
     const varifyEmail = () => {
         sendEmailVerification(auth.currentUser)
             .then(() => {
-                alert('Email sent to verify, Now You can logIn');
+                alert('Email sent to verify');
             })
     }
     if (user) {
         varifyEmail()
-        navigate('/login')
-
+        navigate('/home')
     }
 
     return (
