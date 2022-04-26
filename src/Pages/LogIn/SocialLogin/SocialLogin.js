@@ -12,14 +12,14 @@ const SocialLogin = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (user) {
+        if (user || user1) {
             navigate('/home')
         }
     }, [])
-    if (loading) {
+    if (loading || loading1) {
         return <Spinnerr></Spinnerr>
     };
-    if (error) {
+    if (error || error1) {
         return (
             <div className='container text-center fs-3 fw-bold mt-5'>
                 <p style={{ color: 'RGB(220,77,1)', marginBottom: '400px' }}>Error: {error.message}</p>
