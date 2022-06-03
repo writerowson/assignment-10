@@ -1,5 +1,5 @@
 import React from 'react';
-import sleeping from '../images/404.jpg'
+import sleeping from '../images/404.png'
 const NotFounded = () => {
     return (
         <div className='container'>
