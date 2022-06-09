@@ -3,6 +3,7 @@ import { Carousel } from 'react-bootstrap';
 import slide1 from '../../images/slide/img01.png'
 import slide2 from '../../images/slide/img02.png'
 import slide3 from '../../images/slide/img03.png'
+import CustomLink from '../../Shared/CustomLink';
 import UseServices from '../../Shared/UseServices';
 import Service from '../Services/Service/Service';
 import Details from './Details';
@@ -63,7 +64,7 @@ const Home = () => {
                 </div>
 
                 <button style={{ color: "#006400" }} type="button"
-                    className="btn btn-sm mb-5 fw-bold  float-end mb-5"> See all services >
+                    className="btn btn-sm mb-5 fw-bold  float-end mb-5"> <CustomLink to='/services'> See all services ></CustomLink>
                 </button>
             </div>
             <Question></Question>

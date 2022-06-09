@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
         <div style={{ color: "#006400" }} className='container  mt-5'>
-            <h3 style={{ color: 'RGB(220,77,1)' }} className=' text-center'>Difference betdeveloperen authorization and authentication</h3>
+            <h3 style={{ color: 'RGB(220,77,1)' }} className=' text-center'>Difference between  authorization and authentication</h3>
             <p>Authentication is the first step of security system to check a real user. Authorization is the process to give permission to user for accessing resources. Authorization always occures after Authentication. User can see Authentication even some portions can changed by users. User can't changed Authorization. As example register or login is part of Authentication and download photos, change profile picture, give like or dislike are example of Authorization </p>
 
             <h3 style={{ color: 'RGB(220,77,1)' }} className='text-center'>The reasons of using firebase and other options  to implement authentication</h3>

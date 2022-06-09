@@ -1,5 +1,6 @@
 import React from 'react';
-import CustomLink from '../../../Shared/CustomLink';
+import { Link } from 'react-router-dom';
+
 
 const Service = ({ service }) => {
     const { picture, name, Fees, about } = service
@@ -12,7 +13,7 @@ const Service = ({ service }) => {
                 <h4>{name}</h4>
                 <h6>Service Charge : {Fees}</h6>
                 <p>{about}</p>
-                <button style={{ border: '2px solid RGB(220,77,1)' }} className='btn btn-light   mb-3' > <CustomLink to='/checkout'> Check out</CustomLink> </button>
+                <button style={{ border: '2px solid RGB(220,77,1)' }} className='btn btn-success   mb-3' > <Link className=' text-light pe-auto text-decoration-none' to='/checkout'> Check out</Link> </button>
             </div>
 
         </div >

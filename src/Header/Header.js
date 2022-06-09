@@ -11,7 +11,7 @@ const Header = () => {
         signOut(auth)
     }
     return (
-        <Navbar className=' ' sticky='top' collapseOnSelect expand="lg" bg='light' variant="light">
+        <Navbar style={{ backgroundColor: '#d6fff5' }} sticky='top' collapseOnSelect expand="lg" variant="light">
             <Container>
                 <Navbar.Brand as={Link} to="/" style={{ color: "#006400" }} className='fw-bold' >HAPPENING HAPPINESS</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

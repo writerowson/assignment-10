@@ -18,10 +18,10 @@ const Details = () => {
                                 favorite location. Get 20% off for pre-booking. Our all pakages also available for
                                 Destination
                                 Wedding Plan</p>
-                            <div className="btn btn-lg border border-rounded  text-light "
+
+                            <button className="btn btn-success "
                             >For more
-                                details
-                            </div>
+                                details</button>
                         </div>
                     </div>
                 </div>
