@@ -5,6 +5,8 @@ import slide2 from '../../images/slide/img02.png'
 import slide3 from '../../images/slide/img03.png'
 import UseServices from '../../Shared/UseServices';
 import Service from '../Services/Service/Service';
+import Details from './Details';
+import Question from './Question';
 
 const Home = () => {
     const [services, setServices] = UseServices()
@@ -49,7 +51,8 @@ const Home = () => {
             <div className="container">
 
                 <div style={{ color: "#006400" }} className=' row text-center mt-5'>
-                    <h2 > Most Popular Services</h2>
+                    <h2 className="d-flex justify-content-center fw-bolder pb-5 mt-5">
+                        Most Popular Services</h2>
                     {
                         services.slice(0, 3).map(service => <Service
                             key={service._id}
@@ -58,7 +61,13 @@ const Home = () => {
                     }
 
                 </div>
+
+                <button style={{ color: "#006400" }} type="button"
+                    className="btn btn-sm mb-5 fw-bold  float-end mb-5"> See all services >
+                </button>
             </div>
+            <Question></Question>
+            <Details></Details>
         </div>
     );
 };

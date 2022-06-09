@@ -21,8 +21,9 @@ function App() {
     <div >
       <Header></Header>
       <Routes>
-        <Route path='/' element={<RequireAuth><Home></Home></RequireAuth>}></Route>
-        <Route path='/home' element={<RequireAuth><Home></Home></RequireAuth>}></Route>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+
         <Route path='/services' element={<Services></Services>}></Route>
         <Route path='/checkout' element=
           {<RequireAuth>
