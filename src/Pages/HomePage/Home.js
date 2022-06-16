@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import slide1 from '../../images/slide/img01.png'
-import slide2 from '../../images/slide/img02.png'
-import slide3 from '../../images/slide/img03.png'
+import slide1 from '../../images/slide/img01.jpg'
+import slide2 from '../../images/slide/img02.jpg'
+import slide3 from '../../images/slide/img03.jpg'
 import CustomLink from '../../Shared/CustomLink';
 import UseServices from '../../Shared/UseServices';
 import Service from '../Services/Service/Service';
